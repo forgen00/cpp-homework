@@ -1,0 +1,17 @@
+﻿main.obj : error LNK2019: ссылка на неразрешенный внешний символ clearviewport в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ _bgi_delay в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ setbkcolor в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ closegraph в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ initwindow в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ _bgi_kbhit в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ swapbuffers в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ outtextxy в функции main.
+main.obj : error LNK2019: ссылка на неразрешенный внешний символ settextstyle в функции main.
+MyButton.obj : error LNK2019: ссылка на неразрешенный внешний символ bar в функции "void __cdecl drawButtons(void)" (?drawButtons@@YAXXZ).
+MyButton.obj : error LNK2019: ссылка на неразрешенный внешний символ rectangle в функции "void __cdecl drawButtons(void)" (?drawButtons@@YAXXZ).
+MyButton.obj : error LNK2019: ссылка на неразрешенный внешний символ setcolor в функции "void __cdecl drawButtons(void)" (?drawButtons@@YAXXZ).
+MyButton.obj : error LNK2019: ссылка на неразрешенный внешний символ setfillstyle в функции "void __cdecl drawButtons(void)" (?drawButtons@@YAXXZ).
+MyButton.obj : error LNK2019: ссылка на неразрешенный внешний символ mousex в функции "int __cdecl select_control(void)" (?select_control@@YAHXZ).
+MyButton.obj : error LNK2019: ссылка на неразрешенный внешний символ mousey в функции "int __cdecl select_control(void)" (?select_control@@YAHXZ).
+graphicsWork.lib : warning LNK4272: тип компьютера библиотеки "x86" конфликтует с типом целевого компьютера "x64"
+D:\Творчество\Visual Studio\stack\x64\Debug\05.08.22.exe : fatal error LNK1120: неразрешенных внешних элементов: 15
