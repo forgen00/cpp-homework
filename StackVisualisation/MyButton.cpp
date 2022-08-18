@@ -8,14 +8,14 @@ MyBtn controls[N_CONTROLS];
 
 void create_control(int left, int top, int right, int bottom, int type) {
 
-	//Создаем кнопку
+	//РЎРѕР·РґР°РµРј РєРЅРѕРїРєСѓ
 	MyBtn control;
 	control.left = left;
 	control.top = top;
 	control.right = right;
 	control.bottom = bottom;
 
-	//type - именованная константа, она же индекс для массива controls
+	//type - РёРјРµРЅРѕРІР°РЅРЅР°СЏ РєРѕРЅСЃС‚Р°РЅС‚Р°, РѕРЅР° Р¶Рµ РёРЅРґРµРєСЃ РґР»СЏ РјР°СЃСЃРёРІР° controls
 	controls[type] = control;
 }
 
@@ -37,7 +37,6 @@ void drawButtons(const int WIDTH, const int HEIGHT) {
 			bar(controls[i].left, controls[i].top, controls[i].right, controls[i].bottom);
 			outtextxy(controls[i].left, HEIGHT - 70, "Delete");
 			rectangle(controls[i].left, controls[i].top, controls[i].right, controls[i].bottom);
-			button_left += button_width;
 		}
 	}
 }
