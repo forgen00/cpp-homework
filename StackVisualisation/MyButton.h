@@ -1,7 +1,7 @@
 #ifndef _CONTROL_H
 #define _CONTROL_H
 
-//Структура "кнопка"
+//РЎС‚СЂСѓРєС‚СѓСЂР° "РєРЅРѕРїРєР°"
 struct MyBtn {
 	int left;
 	int top;
@@ -9,9 +9,9 @@ struct MyBtn {
 	int bottom;
 };
 
-//Именованные константы для кнопок
+//РРјРµРЅРѕРІР°РЅРЅС‹Рµ РєРѕРЅСЃС‚Р°РЅС‚С‹ РґР»СЏ РєРЅРѕРїРѕРє
 enum control_values {
-	NONE = -1, BUTTON_1, BUTTON_2, BUTTON_3, BUTTON_4, BUTTON_5, BUTTON_6, BUTTON_7, BUTTON_8, BUTTON_9, BUTTON_10, N_CONTROLS
+	NONE = -1, BUTTON_1, BUTTON_2, BUTTON_3, BUTTON_4, BUTTON_5, BUTTON_6, BUTTON_7, BUTTON_8, BUTTON_9, BUTTON_10, BUTTON_11, N_CONTROLS
 };
 
 void create_control(int left, int top, int right, int bottom, int type);
