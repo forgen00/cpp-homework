@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Stack.h"
+#include "headers/graphics.h"
 
 Stack empty_stack() {
 	Stack st;
@@ -43,4 +44,18 @@ bool is_empty(const Stack& st) {
 
 bool is_full(const Stack& st) {
 	return st.size == MAX_SIZE;
+}
+
+void StackVisual(const Stack& st, const int WIDTH, const int HEIGHT) {
+	int left = WIDTH - 1400, top = HEIGHT - 200, right = WIDTH - 300, bottom = HEIGHT - 125;
+	setfillstyle(SOLID_FILL, WHITE);
+	settextstyle(DEFAULT_FONT, HORIZ_DIR, 60);
+	setcolor(RED);
+	setbkcolor(WHITE);
+	for (int i = 0; i < st.size; ++i) {
+		bar(left, top, right, bottom);
+		rectangle(left, top, right, bottom);
+		outtextxy((left + right) / 2, top + 10, std::to_string(st.arr[i]).c_str());
+		top -= 75; bottom -= 75;
+	}
 }
