@@ -1,21 +1,20 @@
 #ifndef _STACK_H
 #define _STACK_H
 
-const int MAX_SIZE = 100;
+const int MAX_SIZE = 10;
 
 struct Stack {
 	int arr[MAX_SIZE];
-	int top;				//Индекс вершины стека
-	int size;				//Фактический размер стека
+	int top;				//РРЅРґРµРєСЃ РІРµСЂС€РёРЅС‹ СЃС‚РµРєР°
+	int size;				//Р¤Р°РєС‚РёС‡РµСЃРєРёР№ СЂР°Р·РјРµСЂ СЃС‚РµРєР°
 };
 
-Stack empty_stack();				//Создаёт пустой стек
-void push(Stack& st, int number);	//Добавление числа в стек
-int top(const Stack& st);			//Возвращать вершину стека
-void pop(Stack& st);				//Выкидывает из стека вершину, вершина обновляется
-bool is_empty(const Stack& st);		//Возвращает true, если стек пустой
-bool is_full(const Stack& st);		//Возвращает true, если стек полный
-
-
+Stack empty_stack();				//РЎРѕР·РґР°С‘С‚ РїСѓСЃС‚РѕР№ СЃС‚РµРє
+void push(Stack& st, int number);	//Р”РѕР±Р°РІР»РµРЅРёРµ С‡РёСЃР»Р° РІ СЃС‚РµРє
+int top(const Stack& st);			//Р’РѕР·РІСЂР°С‰Р°С‚СЊ РІРµСЂС€РёРЅСѓ СЃС‚РµРєР°
+void pop(Stack& st);				//Р’С‹РєРёРґС‹РІР°РµС‚ РёР· СЃС‚РµРєР° РІРµСЂС€РёРЅСѓ, РІРµСЂС€РёРЅР° РѕР±РЅРѕРІР»СЏРµС‚СЃСЏ
+bool is_empty(const Stack& st);		//Р’РѕР·РІСЂР°С‰Р°РµС‚ true, РµСЃР»Рё СЃС‚РµРє РїСѓСЃС‚РѕР№
+bool is_full(const Stack& st);		//Р’РѕР·РІСЂР°С‰Р°РµС‚ true, РµСЃР»Рё СЃС‚РµРє РїРѕР»РЅС‹Р№
+void StackVisual(const Stack& s, const int WIDTH, const int HEIGHT);
 
 #endif
