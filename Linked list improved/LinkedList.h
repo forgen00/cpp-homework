@@ -10,9 +10,9 @@ private:
 	}*head;
 
 public:
-	List();								//Конструктор
-	List(const List& other);			//Конструктор копирования
-	~List();							//Деструктор (удаляет список)
+	List();								//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	List(const List& other);					//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	~List();							//Р”РµРєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ (СѓРґР°Р»СЏРµС‚ СЃРїРёСЃРѕРє)
 	Node* find_node(int value);
 	void push_front(int value);
 	void push_back(int value);
