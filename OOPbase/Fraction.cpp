@@ -251,7 +251,7 @@ public:
 			n /= 10;
 		}
 	}
-	
+
 	BigInteger(std::string s) {
 		if (s[0] == '-') {
 			isNegative = true;
@@ -260,31 +260,7 @@ public:
 			digits.push_back(s[i] - '0');
 		}
 	}
-	
-	BigInteger add(BigInteger other) {
-		std::vector<int> result;
-		int size = std::max(digits.size(), other.digits.size());
-		int carry = 0;
-		for (int i = 0; i < size; ++i) {
-			int cur = carry;
 
-			if (i < digits.size()) {
-				cur += digits[i];
-			}
-			if (i < other.digits.size()) {
-				cur += other.digits[i];
-			}
-			result.push_back(cur % 10);
-			carry = (cur >= 10);
-		}
-
-		if (carry == 1) {
-			result.push_back(1);
-		}
-
-		return BigInteger(result);
-	}
-	
 	void print() {
 		if (isNegative) {
 			std::cout << '-';
@@ -301,7 +277,84 @@ public:
 	std::vector<int> getDigits() {
 		return digits;
 	}
+
+	friend BigInteger operator+(BigInteger b);
+	friend BigInteger operator-(BigInteger b);
+	friend BigInteger operator+(BigInteger b1, BigInteger b2);
+	friend BigInteger operator-(const BigInteger& b1, const BigInteger& b2);
+	friend bool operator<(BigInteger b1, BigInteger b2);
+	friend BigInteger abs(const BigInteger& a);
 };
+
+BigInteger operator+(BigInteger b) {
+	return b;
+}
+
+BigInteger operator-(BigInteger b) {
+	b.isNegative = true;
+	return b;
+}
+
+bool operator<(BigInteger b1, BigInteger b2) {
+	if (b1.getDigitsSize() < b2.getDigitsSize()) {
+		return b1.getDigitsSize() < b2.getDigitsSize();
+	}
+
+	return b1.digits < b2.digits;
+}
+
+BigInteger abs(const BigInteger& a) {
+	
+}
+
+BigInteger operator+(BigInteger b1, BigInteger b2) {
+	if (b1.isNegative) {
+		if (b2.isNegative) {
+			return b1 + b2;
+		}
+		else {
+			return b1 - (-b2);
+		}
+	}
+	std::vector<int> result;
+	int size = std::max(b1.digits.size(), b2.digits.size());
+	int carry = 0;
+	for (int i = 0; i < size; ++i) {
+		int cur = carry;
+
+		if (i < b1.digits.size()) {
+			cur += b1.digits[i];
+		}
+		if (i < b2.digits.size()) {
+			cur += b2.digits[i];
+		}
+		result.push_back(cur % 10);
+		carry = (cur >= 10);
+	}
+
+	if (carry == 1) {
+		result.push_back(1);
+	}
+
+	return BigInteger(result);
+}
+
+BigInteger operator-(const BigInteger& b1, const BigInteger& b2) {
+	if (b1.isNegative) {
+		return b1 + (-b2);
+	}
+	if (b2.isNegative) {
+		return -(-b1 + b2);
+	}
+	else if (b1 < b2) {
+		return -(b2 - b1);
+	}
+
+	//Описание вычитания двух положительных чисел
+	BigInteger result = b1 + b2;
+	result.isNegative = true;
+	return result;
+}
 
 
 int main() {
