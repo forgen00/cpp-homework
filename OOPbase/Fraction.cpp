@@ -351,9 +351,18 @@ BigInteger operator-(const BigInteger& b1, const BigInteger& b2) {
 	}
 
 	//Описание вычитания двух положительных чисел
-	BigInteger result = b1 + b2;
-	result.isNegative = true;
-	return result;
+	int carry = 0;
+	std::vector<int> result;
+	int size = b1.digits.size();
+	for (int i = 0; i < size; ++i) {
+		int cur = b1.digits[i] - carry;
+		if (i < b2.digits.size()) {
+			cur -= b2.digits[i];
+		}
+		result.push_back((cur + 10) % 10);
+		carry = (cur < 0);
+	}
+	return BigInteger(result);
 }
 
 
