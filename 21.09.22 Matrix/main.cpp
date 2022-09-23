@@ -3,8 +3,8 @@
 class Matrix {
 private:
 	double** a;
-	int rows;		//кол-во строк
-	int colums;		//кол-во столбцов
+	int rows;		//РєРѕР»-РІРѕ СЃС‚СЂРѕРє
+	int colums;		//РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ
 
 	bool is_correct(int i, int j);
 
@@ -212,7 +212,7 @@ int main() {
 	otherMatrix.print();
 	std::cout << '\n';
 
-	Matrix sumMatrix = otherMatrix * someMatrix;
+	Matrix sumMatrix = someMatrix * otherMatrix;
 	sumMatrix.print();
 	
 	return 0;
